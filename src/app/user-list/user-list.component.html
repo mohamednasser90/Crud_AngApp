@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col">
+            <h1>Users List</h1>
+            <button class="btn btn-primary my-3" [routerLink]="['/add-user']">Add</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="alert alert-warning" *ngIf="userList.length==0">   No Users found</div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Firstname</th>
+            <th scope="col">Lastname</th>
+            <th scope="col">Photo</th>
+            <th scope="col">Operations</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let listuser of userList">
+            <th scope="row">{{listuser.id}}</th>
+            <td>{{listuser.name}}</td>
+            <td>{{listuser.username}}</td>
+            <td>{{listuser.email}}</td>
+            <td>
+                <button class="btn btn-info">Details</button>
+                 <button CLASS="btn btn-danger mx-3" (click)="delete(listuser)">DELETE</button> 
+                 <button CLASS="btn btn-warning" >UPDATE</button> 
+                 <!-- [ROUTERLINK]="['/UPDATE-USER',PERSON._ID]" -->
+            </td>
+          </tr>
+        
+        </tbody>
+      </table>
+      </div>
+      </div>
+</div>
+
+<app-footer></app-footer>

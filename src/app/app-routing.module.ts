@@ -1,3 +1,4 @@
+import { UserListComponent } from './user-list/user-list.component';
 import { PeopleListComponent } from './people-list/people-list.component';
 import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path:'people-list',
     component:PeopleListComponent
+  },
+  {
+    path:'user-list',
+    component:UserListComponent
   }
 ];
 
